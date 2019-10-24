@@ -4,14 +4,14 @@
         106: function(e, t, a) {
             "use strict";
             a.r(t);
-            var n = a(0),
-                r = a.n(n),
+            var r = a(0),
+                n = a.n(r),
                 c = a(36),
                 s = a.n(c),
                 l = (a(44), a(12)),
-                o = a(2),
-                i = a(37),
-                u = a.n(i);
+                i = a(2),
+                o = a(37),
+                u = a.n(o);
             a(62);
             var h = a(6),
                 m = a(7),
@@ -33,8 +33,8 @@
                                     var e = this.props,
                                         t = e.searchKeyWord,
                                         a = e.movieTitle;
-                                    return r.a.createElement(
-                                        r.a.Fragment,
+                                    return n.a.createElement(
+                                        n.a.Fragment,
                                         null,
                                         E()(a.replace(new RegExp(t, "gi"), "<span> ".concat(t, "</span>")))
                                     );
@@ -43,22 +43,22 @@
                         ]),
                         t
                     );
-                })(n.PureComponent),
+                })(r.PureComponent),
                 g = (function(e) {
                     function t() {
                         var e, a;
                         Object(h.a)(this, t);
-                        for (var n = arguments.length, r = new Array(n), c = 0; c < n; c++) r[c] = arguments[c];
+                        for (var r = arguments.length, n = new Array(r), c = 0; c < r; c++) n[c] = arguments[c];
                         return (
-                            ((a = Object(p.a)(this, (e = Object(d.a)(t)).call.apply(e, [this].concat(r)))).state = {
+                            ((a = Object(p.a)(this, (e = Object(d.a)(t)).call.apply(e, [this].concat(n)))).state = {
                                 clear: !1,
                                 searchKeyWord: ""
                             }),
                             (a.searchFor = function(e) {
                                 var t = e.target.value,
-                                    n = a.props.onSearchFor;
+                                    r = a.props.onSearchFor;
                                 a.setState({ searchKeyWord: t }),
-                                    n(t),
+                                    r(t),
                                     t.length > 0 ? a.setState({ clear: !0 }) : a.setState({ clear: !1 });
                             }),
                             (a.restForm = function() {
@@ -76,19 +76,34 @@
                                     var e = this.props.searchResults,
                                         t = (e = void 0 === e ? {} : e).results,
                                         a = this.state.searchKeyWord;
-                                    return r.a.createElement(
-                                        r.a.Fragment,
+                                    return n.a.createElement(
+                                        n.a.Fragment,
                                         null,
-                                        r.a.createElement(
+                                        n.a.createElement(
                                             "div",
-                                            { className: "search-bar" },
-                                            r.a.createElement(
+                                            {
+                                                className: "search-bar",
+                                                onSubmit: function(e) {
+                                                    return e.preventDefault();
+                                                }
+                                            },
+                                            n.a.createElement(
                                                 "form",
                                                 { role: "search", "aria-label": "header-search" },
-                                                r.a.createElement("input", {
+                                                n.a.createElement(
+                                                    "label",
+                                                    {
+                                                        "aria-label": "Search-this-site",
+                                                        className: "SEOHidden",
+                                                        htmlFor: "searchInput"
+                                                    },
+                                                    "Search this site"
+                                                ),
+                                                n.a.createElement("input", {
                                                     className: "search-bar--input",
                                                     id: "searchInput",
                                                     type: "text",
+                                                    name: "search",
                                                     "aria-label": "Search",
                                                     placeholder: "Search For Movies",
                                                     spellCheck: "false",
@@ -98,30 +113,37 @@
                                                 })
                                             ),
                                             this.props.isSearching &&
-                                                r.a.createElement("span", { className: "search-bar--loading" }),
+                                                n.a.createElement("span", { className: "search-bar--loading" }),
                                             this.state.clear &&
                                                 !this.props.isSearching &&
-                                                r.a.createElement("span", {
+                                                n.a.createElement("span", {
+                                                    role: "button",
+                                                    "aria-pressed": "false",
+                                                    "aria-label": "delete-search-key-word",
                                                     onClick: this.restForm,
                                                     className: "search-bar--clear"
                                                 }),
                                             t &&
                                                 a.length > 0 &&
-                                                r.a.createElement(
-                                                    r.a.Fragment,
+                                                n.a.createElement(
+                                                    n.a.Fragment,
                                                     null,
                                                     t.length > 0
-                                                        ? r.a.createElement(
+                                                        ? n.a.createElement(
                                                               "div",
                                                               { className: "search-bar--result" },
-                                                              r.a.createElement(
+                                                              n.a.createElement(
                                                                   "ul",
-                                                                  null,
+                                                                  { role: "list" },
                                                                   t.map(function(e) {
-                                                                      return r.a.createElement(
+                                                                      return n.a.createElement(
                                                                           "li",
-                                                                          { key: e.id },
-                                                                          r.a.createElement(v, {
+                                                                          {
+                                                                              role: "listitem",
+                                                                              key: e.id,
+                                                                              "aria-label": e.title
+                                                                          },
+                                                                          n.a.createElement(v, {
                                                                               movieTitle: e.title,
                                                                               searchKeyWord: a
                                                                           })
@@ -129,7 +151,7 @@
                                                                   })
                                                               )
                                                           )
-                                                        : r.a.createElement(
+                                                        : n.a.createElement(
                                                               "span",
                                                               { className: "search-bar--nothing" },
                                                               "Nothing found for this search :("
@@ -142,21 +164,23 @@
                         ]),
                         t
                     );
-                })(n.Component);
-            var y = function(e) {
-                var t = e.serchHistroyWord,
+                })(r.Component);
+            var S = function(e) {
+                var t = e.searchHistoryWord,
                     a = e.deleteSearchHistory,
-                    n = e.deleteOneITem;
-                return r.a.createElement(
+                    r = e.deleteOneITem;
+                return n.a.createElement(
                     "div",
                     { className: "search-history" },
-                    r.a.createElement(
+                    n.a.createElement(
                         "div",
                         { className: "search-history--title" },
-                        r.a.createElement("h3", null, "History will be added Here"),
-                        r.a.createElement(
+                        n.a.createElement("h3", null, "History will be added Here"),
+                        n.a.createElement(
                             "span",
                             {
+                                role: "button",
+                                "aria-pressed": "false",
                                 onClick: function() {
                                     a();
                                 }
@@ -164,21 +188,23 @@
                             "clear search history"
                         )
                     ),
-                    r.a.createElement(
+                    n.a.createElement(
                         "ul",
                         null,
                         t &&
                             t.length > 0 &&
                             t.map(function(e, t) {
-                                return r.a.createElement(
+                                return n.a.createElement(
                                     "li",
                                     { key: t },
-                                    r.a.createElement("span", null, e.debouncedSearchTerm, " "),
-                                    r.a.createElement("span", null, e.currentTime),
-                                    r.a.createElement("span", {
+                                    n.a.createElement("span", null, e.debouncedSearchTerm, " "),
+                                    n.a.createElement("span", null, e.currentTime),
+                                    n.a.createElement("span", {
+                                        role: "button",
+                                        "aria-pressed": "false",
                                         onClick: function() {
                                             return (function(e) {
-                                                n(e);
+                                                r(e);
                                             })(t);
                                         }
                                     })
@@ -187,26 +213,26 @@
                     )
                 );
             };
-            var O = function() {
-                var e = Object(n.useState)(""),
-                    t = Object(o.a)(e, 2),
+            var y = function() {
+                var e = Object(r.useState)(""),
+                    t = Object(i.a)(e, 2),
                     a = t[0],
                     c = t[1],
-                    s = Object(n.useState)([]),
-                    i = Object(o.a)(s, 2),
-                    h = i[0],
-                    m = i[1],
-                    p = Object(n.useState)(!1),
-                    d = Object(o.a)(p, 2),
+                    s = Object(r.useState)([]),
+                    o = Object(i.a)(s, 2),
+                    h = o[0],
+                    m = o[1],
+                    p = Object(r.useState)(!1),
+                    d = Object(i.a)(p, 2),
                     f = d[0],
                     b = d[1],
                     E = (function(e, t) {
-                        var a = Object(n.useState)(e),
-                            r = Object(o.a)(a, 2),
-                            c = r[0],
-                            s = r[1];
+                        var a = Object(r.useState)(e),
+                            n = Object(i.a)(a, 2),
+                            c = n[0],
+                            s = n[1];
                         return (
-                            Object(n.useEffect)(
+                            Object(r.useEffect)(
                                 function() {
                                     var a = setTimeout(function() {
                                         s(e);
@@ -220,31 +246,31 @@
                             c
                         );
                     })(a, 500),
-                    v = Object(n.useState)([]),
-                    O = Object(o.a)(v, 2),
-                    S = O[0],
-                    j = O[1];
+                    v = Object(r.useState)([]),
+                    y = Object(i.a)(v, 2),
+                    O = y[0],
+                    j = y[1];
                 return (
-                    Object(n.useEffect)(
+                    Object(r.useEffect)(
                         function() {
                             if (E) {
                                 var e = (function() {
                                     var e = new Date(),
                                         t = ("0" + e.getDate()).slice(-2),
                                         a = ("0" + (e.getMonth() + 1)).slice(-2),
-                                        n = e.getFullYear(),
-                                        r = e.toLocaleTimeString().split(" "),
-                                        c = r[1],
-                                        s = r[0].split(":");
+                                        r = e.getFullYear(),
+                                        n = e.toLocaleTimeString().split(" "),
+                                        c = n[1],
+                                        s = n[0].split(":");
                                     return ""
-                                        .concat(n, "-")
+                                        .concat(r, "-")
                                         .concat(a, "-")
                                         .concat(t, ", ")
                                         .concat(s[0], ":")
                                         .concat(s[1], " ")
                                         .concat(c);
                                 })();
-                                j([].concat(Object(l.a)(S), [{ debouncedSearchTerm: E, currentTime: e }])),
+                                j([].concat(Object(l.a)(O), [{ debouncedSearchTerm: E, currentTime: e }])),
                                     b(!0),
                                     (function(e) {
                                         if (e.length > 0) {
@@ -268,14 +294,14 @@
                         },
                         [E]
                     ),
-                    r.a.createElement(
+                    n.a.createElement(
                         "div",
                         { className: "container" },
-                        r.a.createElement("h1", { className: "SEOHidden" }, "Simple Search Application"),
-                        r.a.createElement(
+                        n.a.createElement("h1", { className: "SEOHidden" }, "Simple Search Application"),
+                        n.a.createElement(
                             "header",
-                            null,
-                            r.a.createElement(g, {
+                            { role: "heading", "aria-level": "1" },
+                            n.a.createElement(g, {
                                 onSearchFor: function(e) {
                                     c(e);
                                 },
@@ -283,16 +309,16 @@
                                 searchResults: h
                             })
                         ),
-                        r.a.createElement(
+                        n.a.createElement(
                             "section",
-                            null,
-                            r.a.createElement(y, {
-                                serchHistroyWord: S,
+                            { "aria-level": "1" },
+                            n.a.createElement(S, {
+                                searchHistoryWord: O,
                                 deleteSearchHistory: function() {
                                     j([]);
                                 },
                                 deleteOneITem: function(e) {
-                                    var t = Object(l.a)(S);
+                                    var t = Object(l.a)(O);
                                     -1 !== e && (t.splice(e, 1), j(t));
                                 }
                             })
@@ -300,7 +326,7 @@
                     )
                 );
             };
-            s.a.hydrate(r.a.createElement(O, null), document.getElementById("root"));
+            s.a.hydrate(n.a.createElement(y, null), document.getElementById("root"));
         },
         39: function(e, t, a) {
             e.exports = a(106);
@@ -311,4 +337,4 @@
     },
     [[39, 1, 2]]
 ]);
-//# sourceMappingURL=main.4defa647.chunk.js.map
+//# sourceMappingURL=main.c697182b.chunk.js.map

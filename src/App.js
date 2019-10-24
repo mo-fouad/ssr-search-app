@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import useDebounce from "./helpers/use-debounce";
@@ -56,12 +57,12 @@ function App() {
     return (
         <div className="container">
             <h1 className="SEOHidden">Simple Search Application</h1>
-            <header>
+            <header role="heading" aria-level="1">
                 <SearchBar onSearchFor={updateingSearch} isSearching={isSearching} searchResults={results} />
             </header>
-            <section>
+            <section aria-level="1">
                 <HistoryData
-                    serchHistroyWord={searchHistory}
+                    searchHistoryWord={searchHistory}
                     deleteSearchHistory={deleteSearchHistory}
                     deleteOneITem={deleteSearchHistoryItem}
                 />
@@ -98,3 +99,5 @@ function getNow() {
 }
 
 export default App;
+
+App.propTypes = {};
