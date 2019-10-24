@@ -1,5 +1,5 @@
 
-#Simple SSR React App
+<h1>Simple SSR React App</h1>
 
 this project is a Simple Server side React Application to search for movies or TVShows you may like,
 it uses React hooks concept als the denouncing idea. 
@@ -9,7 +9,7 @@ This project was bootstrapped with [Create React SSR App](https://github.com/tru
 
 --- 
 
-##Scripts to run the project
+<h2>Scripts to run the project<h2>
 
 to the the development mode, navigate to the project directory, you can run:
 
