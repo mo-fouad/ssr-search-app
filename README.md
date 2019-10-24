@@ -1,3 +1,4 @@
+
 #Simple SSR React App
 
 this project is a Simple Server side React Application to search for movies or TVShows you may like,
