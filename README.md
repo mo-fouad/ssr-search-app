@@ -9,6 +9,8 @@ This project was bootstrapped with [Create React SSR App](https://github.com/tru
 
 --- 
 
+![alt text](https://github.com/mo-fouad/ssr-search-app/blob/master/screens/iron.png)
+
 <h2>Scripts to run the project<h2>
 
 to the the development mode, navigate to the project directory, you can run:
