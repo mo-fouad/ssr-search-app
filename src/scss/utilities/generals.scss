@@ -1,0 +1,14 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-family;
+    background: $back-ground-color;
+}
+
+.SEOHidden {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}

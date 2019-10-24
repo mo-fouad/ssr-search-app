@@ -1,0 +1,97 @@
+.search-bar {
+    position: relative;
+    background: #fff;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+
+    &--input {
+        width: 100%;
+        height: 70px;
+        font-size: 22px;
+        padding: 20px;
+    }
+
+    &--clear {
+        position: absolute;
+        cursor: pointer;
+        border: none;
+        width: 30px;
+        height: 30px;
+        display: block;
+        top: 30px;
+        right: 30px;
+        padding: 5px;
+
+        &:after {
+            content: url("data:image/svg+xml;charset=UTF-8, <svg xmlns='http://www.w3.org/2000/svg' version='1.1' height='20' width='20'><line x1='0' y1='0' x2='20' y2='20' stroke='black' stroke-width='2'/><line x1='20' y1='0' x2='0' y2='20' stroke='black' stroke-width='2'/></svg>");
+        }
+    }
+
+    &--loading {
+        position: absolute;
+        width: 41px;
+        height: 43px;
+        top: 25px;
+        display: inline-block;
+        right: 25px;
+
+        &:after {
+            content: " ";
+            display: block;
+            width: 36px;
+            height: 36px;
+            margin: 1px;
+            border-radius: 50%;
+            border: 2px solid #333;
+            border-color: #333 transparent #333 transparent;
+            animation: lds-dual-ring 0.5s ease-in-out infinite;
+        }
+    }
+
+    &--result {
+        background: #ffffff;
+        padding: 0 10px;
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 101%;
+        max-height: 250px;
+        overflow-y: scroll;
+        ul {
+            li {
+                margin: 10px 0 5px 0;
+                border-bottom: 1px solid #eee;
+                padding-bottom: 5px;
+                cursor: pointer;
+                color: #888;
+                &:last-child {
+                    border-bottom: none;
+                }
+
+                span {
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    color: #333333;
+                }
+            }
+        }
+    }
+
+    &--nothing {
+        display: block;
+        padding: 10px 0;
+        font-size: 12px;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+// Loading circle Animation
+@keyframes lds-dual-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
